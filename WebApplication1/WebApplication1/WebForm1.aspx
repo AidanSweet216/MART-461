@@ -1,6 +1,19 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication1.WebForm1" %>
 
 <!DOCTYPE html>
+<script runat="server">
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -9,7 +22,9 @@
         .auto-style1 {
             font-size: xx-large;
         }
-        .auto-style2 {}
+        .auto-style2 {
+            
+        }
         .auto-style3 {
             font-size: xx-large;
         }
@@ -22,7 +37,13 @@
         .auto-style6 {
             font-size: x-large;
         }
-        .auto-style7 {}
+        .auto-style7 {
+            
+        }
+        body{
+            background-image:url(C:\Users\sweet\Documents\GitHub\MART-461\WebApplication1\Images\missoula.jfif);
+        }
+        
     </style>
 </head>
 <body style="height: 545px">

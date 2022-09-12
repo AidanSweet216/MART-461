@@ -34,6 +34,9 @@
         .auto-style9 {
             font-size: x-large;
         }
+        body{
+            background-image:url(C:\Users\sweet\Documents\GitHub\MART-461\WebApplication1\Images\missoula.jfif)
+        }
     </style>
 </head>
 <body>
