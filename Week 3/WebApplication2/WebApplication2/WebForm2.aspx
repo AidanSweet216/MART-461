@@ -41,17 +41,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            User logged in: <asp:Label ID ="lblMessage" runat="server"></asp:Label>
-        </div>
-        <div>
-            Display a name: <asp:Label ID ="message2" runat="server"></asp:Label>
-        </div>
-        <div>
-            Display password LOL: <asp:Label ID ="message3" runat="server"></asp:Label>
-        </div>
         
-        <span class="auto-style1">Thanks for stopping by</span><p class="auto-style3">
+        <span class="auto-style1">
+        <asp:GridView ID="GridView1" runat="server">
+        </asp:GridView>
+        Thanks for stopping by</span><p class="auto-style3">
             <strong>Don&#39;t forget to sign out</strong></p>
         <p class="auto-style4">
             <asp:Label ID="Label1" runat="server" Text="What activity did you do today?"></asp:Label>
@@ -69,7 +63,7 @@
             <asp:TextBox ID="TextBox2" runat="server" CssClass="auto-style7" Height="35px" Width="175px" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
         </p>
         <p class="auto-style8">
-            <asp:Button ID="Button1" runat="server" BackColor="#FF9900" BorderColor="#33CCFF" BorderStyle="Outset" CssClass="auto-style9" Height="41px" Text="Log Out" Width="175px" />
+            <asp:Button ID="Button1" runat="server" BackColor="#FF9900" BorderColor="#33CCFF" BorderStyle="Outset" CssClass="auto-style9" Height="41px" Text="Log Out" Width="175px" OnClick="Button1_Click" />
         </p>
     </form>
 </body>
