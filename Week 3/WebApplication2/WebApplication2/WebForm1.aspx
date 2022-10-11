@@ -54,15 +54,7 @@
             <asp:Label ID="Label2" runat="server" CssClass="auto-style4" Text="Date of Birth:"></asp:Label>
         </p>
         <p style="height: 47px">
-            <asp:DropDownList ID="DropDownList1" runat="server" >
-                <asp:ListItem>Month</asp:ListItem>
-            </asp:DropDownList>
-            <asp:DropDownList ID="DropDownList2" runat="server">
-                <asp:ListItem>Day</asp:ListItem>
-            </asp:DropDownList>
-            <asp:DropDownList ID="DropDownList3" runat="server">
-                <asp:ListItem>Year</asp:ListItem>
-            </asp:DropDownList>
+        <asp:TextBox ID="TextBox3" runat="server" CssClass="auto-style7" Height="35px" Width="175px"></asp:TextBox>
         </p>
         <p style="height: 47px">
             <asp:Label ID="Label3" runat="server" CssClass="auto-style5" Text="Password:"></asp:Label>

@@ -21,7 +21,7 @@ namespace WebApplication2
             DataSet myDataSet = new DataSet();
             SqlCommand myCommand = new SqlCommand(MyQuery);
             myCommand.Connection = myConnection;
-            myCommand.CommandType = CommandType.Text;
+            myCommand.CommandType = CommandType.StoredProcedure;
 
             SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
             myAdapter.Fill(myDataSet);
@@ -40,12 +40,20 @@ namespace WebApplication2
             string myConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
             SqlConnection myConnection = new SqlConnection(myConnectionString);
             myConnection.Open();
-            string MyQuery = "Update Users SET userName = '" + userName + "' Where userID =" + userID;
+            string MyQuery = "spUpdateUser";
             Response.Write(MyQuery);
             SqlCommand myCommand = new SqlCommand(MyQuery);
+            SqlParameter[] myParameters = new SqlParameter[4];
+            myParameters[0] = new SqlParameter("username", userName);
+            myParameters[1] = new SqlParameter("pwd", password);
+            myParameters[2] = new SqlParameter("dob", dob);
+            myParameters[3] = new SqlParameter("userID", userID);
+            myCommand.Parameters.AddRange(myParameters);
             myCommand.Connection = myConnection;
-            myCommand.CommandType = CommandType.Text;
+            myCommand.CommandType = CommandType.StoredProcedure;
             myCommand.ExecuteNonQuery();
+            
+            
             Response.Redirect("WebForm2.aspx?userName=" + userName);
         }
 
@@ -55,11 +63,16 @@ namespace WebApplication2
             string myConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
             SqlConnection myConnection = new SqlConnection(myConnectionString);
             myConnection.Open();
-            string MyQuery2 = "Delete Users Where userID = '" + userID;
+            string MyQuery2 = "spDeleteUsers";
             Response.Write(MyQuery2);
+            
             SqlCommand myCommand = new SqlCommand(MyQuery2);
+            SqlParameter[] myParameters = new SqlParameter[1];
+            myParameters[0] = new SqlParameter("userid",userID);
+
+            myCommand.Parameters.AddRange(myParameters);
             myCommand.Connection = myConnection;
-            myCommand.CommandType = CommandType.Text;
+            myCommand.CommandType = CommandType.StoredProcedure;
             myCommand.ExecuteNonQuery();
             Response.Redirect("WebForm2.aspx?userName=" + userID);
         }

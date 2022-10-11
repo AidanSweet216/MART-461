@@ -17,7 +17,7 @@ namespace WebApplication2
             string myConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
             SqlConnection myConnection = new SqlConnection(myConnectionString);
             myConnection.Open();
-            string MyQuery = "SELECT * FROM Users";
+            string MyQuery = "spGetUsers";
             DataSet myDataSet = new DataSet();
             SqlCommand myCommand = new SqlCommand(MyQuery);
             myCommand.Connection = myConnection;
@@ -36,19 +36,29 @@ namespace WebApplication2
         {
             String userName = TextBox1.Text;
             String password = TextBox2.Text;
-            string myConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
-            SqlConnection myConnection = new SqlConnection(myConnectionString);
-            myConnection.Open();
-            string MyQuery = "INSERT  INTO Users(userName,pwd) Values('" + userName+ "','"+password+"')";
-            Response.Write(MyQuery);
-            SqlCommand myCommand = new SqlCommand(MyQuery);
-            myCommand.Connection = myConnection;
-            myCommand.CommandType = CommandType.Text;
-            myCommand.ExecuteNonQuery();
-            //HttpCookie userInfo = new HttpCookie("userInfo" + userName);
-            //Response.Cookies.Add(userInfo);
-            //Session.Add("secret", password);
-             Response.Redirect("WebForm3.aspx?userName="+userName);
+            String dob = TextBox3.Text;
+            if( userName != "")
+            {
+                string myConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+                SqlConnection myConnection = new SqlConnection(myConnectionString);
+                myConnection.Open();
+                string MyQuery = "spInsertNewUser";
+                Response.Write(MyQuery);
+                SqlCommand myCommand = new SqlCommand(MyQuery);
+                SqlParameter[] myParameters = new SqlParameter[3];
+                myParameters[0] = new SqlParameter("username", userName);
+                myParameters[1] = new SqlParameter("pwd", password);
+                myParameters[2] = new SqlParameter("dateOfBirth", dob);
+                myCommand.Parameters.AddRange(myParameters);
+                myCommand.Connection = myConnection;
+                myCommand.CommandType = CommandType.StoredProcedure;
+                myCommand.ExecuteNonQuery();
+                //HttpCookie userInfo = new HttpCookie("userInfo" + userName);
+                //Response.Cookies.Add(userInfo);
+                //Session.Add("secret", password);
+                
+            }
+            Response.Redirect("WebForm3.aspx?userName=" + userName);
 
         }
     }
