@@ -54,7 +54,7 @@ namespace WebApplication2
             myCommand.ExecuteNonQuery();
             
             
-            Response.Redirect("WebForm2.aspx?userName=" + userName);
+            Response.Redirect("WebForm4.aspx?userName=" + userName);
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace WebApplication2
             myCommand.Connection = myConnection;
             myCommand.CommandType = CommandType.StoredProcedure;
             myCommand.ExecuteNonQuery();
-            Response.Redirect("WebForm2.aspx?userName=" + userID);
+            Response.Redirect("WebForm4.aspx?userName=" + userID);
         }
     }
 }

@@ -43,8 +43,6 @@
     <form id="form1" runat="server">
         
         <span class="auto-style1">
-        <asp:GridView ID="GridView1" runat="server">
-        </asp:GridView>
         Thanks for stopping by</span><p class="auto-style3">
             <strong>Don&#39;t forget to sign out</strong></p>
         <p class="auto-style4">

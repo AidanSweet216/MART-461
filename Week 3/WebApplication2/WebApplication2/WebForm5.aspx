@@ -1,11 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication2.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm5.aspx.cs" Inherits="WebApplication2.WebForm5" %>
 
 <!DOCTYPE html>
-<script runat="server">
-
-    
-</script>
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -18,9 +13,6 @@
             
         }
         .auto-style3 {
-            font-size: xx-large;
-        }
-        .auto-style4 {
             font-size: xx-large;
         }
         .auto-style5 {
@@ -41,7 +33,7 @@
 <body style="height: 545px">
     <form id="form1" runat="server">
         <div style="height: 66px; text-align: center">
-            <h1 class="auto-style1">Create New User</h1>
+            <h1 class="auto-style1">User Log In</h1>
             <hr />
         </div>
         <p>
@@ -51,11 +43,7 @@
             <asp:TextBox ID="TextBox1" runat="server" BackColor="White" CssClass="auto-style2" Height="35px" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
         </p>
         <p>
-            <asp:Label ID="Label2" runat="server" CssClass="auto-style4" Text="Date of Birth:"></asp:Label>
-        </p>
-        <p style="height: 47px">
-        <asp:TextBox ID="TextBox3" runat="server" CssClass="auto-style7" Height="35px" Width="175px"></asp:TextBox>
-        </p>
+            &nbsp;</p>
         <p style="height: 47px">
             <asp:Label ID="Label3" runat="server" CssClass="auto-style5" Text="Password:"></asp:Label>
         </p>
