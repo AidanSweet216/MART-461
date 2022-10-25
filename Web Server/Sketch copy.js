@@ -1,11 +1,12 @@
-//let s;
-function preLoad()
+let pink;
+function preload()
 {
 	pink = new Sprite(400, 150, 50, 100);
 	//add animation
-	pink.addAni('idle','assets/Pink_Monster_Idle_4.png', 4);
+	pink.addAni('idle','assets/Idle001.png', 4);
 	pink.ani.offset.y = 18;
-	pink.addAni('moving', 'assets/Pink_Monster_Walk_6.png', 6);
+	pink.addAni('moving', 'assets/Walk001.png', 6);
+	console.log(pink.x);
 }
 function setup() {
 	createCanvas(800, 400);
@@ -14,10 +15,12 @@ function setup() {
 
 
 function draw() {
-	background(0,250,200); 
-	fill(0);
+	background(0); 
+	fill(255,255,255);
 	textAlign(CENTER);
 	text('You are logged in!', width / 2, height / 2);
+	
+	frameRate(30);
 	if (mouse.x < pink.x - 10) {
 		
 		pink.ani = 'moving';
@@ -33,6 +36,7 @@ function draw() {
 		pink.ani = 'idle';
 		pink.vel.x = 0;
 	}
+	
 }
 
 
