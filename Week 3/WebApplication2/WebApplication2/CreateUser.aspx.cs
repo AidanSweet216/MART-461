@@ -54,7 +54,7 @@ namespace WebApplication2
                     myCommand.Connection = myConnection;
                     myCommand.CommandType = CommandType.StoredProcedure;
                     myCommand.ExecuteNonQuery();
-                    Response.Redirect("WebForm3.aspx?userName=" + userName);
+                    Response.Redirect("Admin.aspx?userName=" + userName);
 
                 }
                

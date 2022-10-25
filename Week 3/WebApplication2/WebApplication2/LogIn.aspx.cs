@@ -41,10 +41,11 @@ namespace WebApplication2
             if (myDataSet.Tables[0].Rows.Count > 0)
             {
                 Response.Write("You are logged in");
+                Response.Redirect("Admin.aspx");
             }
             else 
                     {
-                Response.Redirect("WebForm1.aspx");
+                Response.Redirect("CreateUser.aspx");
             }
         }
 

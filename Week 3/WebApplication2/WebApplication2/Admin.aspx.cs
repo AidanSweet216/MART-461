@@ -52,9 +52,9 @@ namespace WebApplication2
             myCommand.Connection = myConnection;
             myCommand.CommandType = CommandType.StoredProcedure;
             myCommand.ExecuteNonQuery();
-            
-            
-            Response.Redirect("WebForm4.aspx?userName=" + userName);
+
+            Response.Write("User Updated");
+            //Response.Redirect("WebForm4.aspx?userName=" + userName);
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -74,7 +74,13 @@ namespace WebApplication2
             myCommand.Connection = myConnection;
             myCommand.CommandType = CommandType.StoredProcedure;
             myCommand.ExecuteNonQuery();
-            Response.Redirect("WebForm4.aspx?userName=" + userID);
+            Response.Write("User Deleted");
+            //Response.Redirect("WebForm4.aspx?userName=" + userID);
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LogOut.aspx");
         }
     }
 }
