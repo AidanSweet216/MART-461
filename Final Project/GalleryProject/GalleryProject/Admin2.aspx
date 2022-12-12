@@ -12,7 +12,21 @@
         <br />
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <br />
+        
         <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />
+        <br />
+        Video ID<br />
+        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <br />
+        Video Link<br />
+        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+        <br />
+        
+        <asp:Button ID="Button2" runat="server" Text="Update" OnClick="Button2_Click" />
+        
+        <asp:Button ID="Button3" runat="server" Text="Delete" OnClick="Button3_Click" />
+        <br />
+        
         <asp:GridView ID="GridView1" runat="server">
         </asp:GridView>
     </form>

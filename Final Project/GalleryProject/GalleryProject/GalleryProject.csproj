@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Admin.aspx" />
     <Content Include="Admin2.aspx" />
+    <Content Include="MainGallery.aspx" />
     <Content Include="Web.config" />
     <Content Include="Welcome.aspx" />
   </ItemGroup>
@@ -79,6 +80,14 @@
     </Compile>
     <Compile Include="Admin2.aspx.designer.cs">
       <DependentUpon>Admin2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database.cs" />
+    <Compile Include="MainGallery.aspx.cs">
+      <DependentUpon>MainGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainGallery.aspx.designer.cs">
+      <DependentUpon>MainGallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
